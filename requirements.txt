@@ -13,3 +13,4 @@ tzdata==2023.3
 python-decouple==3.8
 psycopg2-binary==2.9.6
 dj-database-url==2.3.0
+gunicorn==23.0.0
