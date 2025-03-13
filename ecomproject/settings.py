@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import dj_database_url
+
 from pathlib import Path
 import os
 
@@ -98,6 +100,7 @@ DATABASES = {
     }
 }
 
+DATABASES["default"] = dj_database_url.parse("postgresql://oak_golf_django_render_user:BHcs3eI19bbJ4USlKFBHxzEIoN7HL3jN@dpg-cv9e6b3tq21c7399hkqg-a.oregon-postgres.render.com/oak_golf_django_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
