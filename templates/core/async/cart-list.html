@@ -82,6 +82,27 @@
         </div>
     </div>
 </section>
+<script src="https://unpkg.com/intasend-inlinejs-sdk@4.0.5/build/intasend-inline.js"></script>
+<script>
+    // Initialize IntaSend with your publishable API key
+    new window.IntaSend({
+        publicAPIKey: "ISPubKey_live_3b062505-b4a7-4837-bcd8-e1f748abf8e2", // Replace with your sandbox or live key
+        live: true // Change to true when going live
+    })
+    .on("COMPLETE", (results) => {
+        console.log("Payment successful:", results);
+        // Redirect on successful payment
+        window.location.href = "http://127.0.0.1:8000/";
+    })
+    .on("FAILED", (results) => {
+        console.log("Payment failed:", results);
+        // Handle failure
+        alert("Payment failed, please try again.");
+    })
+    .on("IN-PROGRESS", (results) => {
+        console.log("Payment in progress:", results);
+    });
+</script>
 <script>
     $(document).ready(function (){
         var proQty = $('.pro-qty');
