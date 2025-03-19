@@ -141,7 +141,7 @@ class CartOrder(models.Model):
 	product_status = models.CharField(choices=STATUS_CHOICE, max_length=30, default="processing")
 
 	class Meta:
-		verbose_name_plural = 'Cart Order'
+		verbose_name_plural = 'Orders'
 
 class CartOrderItems(models.Model):
 	order = models.ForeignKey(CartOrder, on_delete=models.CASCADE)
@@ -154,7 +154,7 @@ class CartOrderItems(models.Model):
 	total = models.DecimalField(max_digits=1000, decimal_places=2, default="1.99")
 	
 	class Meta:
-		verbose_name_plural = 'Cart Order Items'
+		verbose_name_plural = 'Order Items'
 
 	def order_img(self):
 		return mark_safe('<img src="/media/%s" width="50" height="50">' % (self.image))
